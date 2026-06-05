@@ -18,8 +18,16 @@ app.use(cors({
       return callback(null, true);
     }
     
-    // Allow the configured CLIENT_URL
-    if (origin === process.env.CLIENT_URL) {
+    // Clean and compare origin
+    const cleanOrigin = origin.replace(/\/$/, "").toLowerCase();
+    const cleanClientUrl = (process.env.CLIENT_URL || "").replace(/\/$/, "").toLowerCase();
+    
+    // Allow the configured CLIENT_URL or the explicitly deployed Vercel URL
+    if (
+      cleanOrigin === cleanClientUrl || 
+      cleanOrigin === "https://restaurant-frontend-seven-orpin.vercel.app" ||
+      cleanOrigin.endsWith(".vercel.app")
+    ) {
       return callback(null, true);
     }
     
