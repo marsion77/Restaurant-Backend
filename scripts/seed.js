@@ -61,7 +61,7 @@ const menuItemsToSeed = [
     type: 'Non-Veg',
     price: 550,
     description: 'Atlantic salmon fillet grilled with fresh garlic, herbs, and lemon-butter sauce.',
-    image: 'https://images.unsplash.com/photo-1485921325814-a50417c64252?w=600',
+    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600',
     baseGrams: 300,
     rating: 4.8
   },
@@ -133,7 +133,7 @@ const menuItemsToSeed = [
     type: 'Veg',
     price: 130,
     description: 'Hydrating watermelon juice blended with fresh mint leaves and a squeeze of lime.',
-    image: 'https://images.unsplash.com/photo-1508888289415-49221b8c2d53?w=600',
+    image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600',
     baseGrams: 300,
     rating: 4.6
   },
@@ -164,7 +164,7 @@ const menuItemsToSeed = [
     type: 'Veg',
     price: 150,
     description: 'Dairy-free, fat-free, refreshing sorbet prepared from pure Alphonso mango pulp.',
-    image: 'https://images.unsplash.com/photo-1488900128323-24dd0ee35d7d?w=600',
+    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600',
     baseGrams: 150,
     rating: 4.8
   },
