@@ -45,7 +45,7 @@ app.use('/api/cart',    cartRouter);
 app.use('/api/order',   orderRouter);
 
 // ── Health check ──────────────────────────────────────────────────────────────
-app.get('/health', (_req, res) => res.json({ status: 'ok', app: 'Sky Bowl API' }));
+app.get('/', (_req, res) => res.json({ status: 'ok', app: 'Sky Bowl API' }));
 
 // ── Global error handler ──────────────────────────────────────────────────────
 app.use((err, _req, res, _next) => {
