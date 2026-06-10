@@ -51,17 +51,15 @@ const placeOrder = async (userId, address, customerEmail) => {
     { items: [], totalAmount: 0 }
   );
 
-  // 5. Send confirmation email (non-blocking on failure — log but don't crash)
-  try {
-    await sendOrderConfirmationEmail(customerEmail, {
-      orderId:     order.orderId,
-      items:       orderItems,
-      totalAmount: order.totalAmount,
-      address:     order.address
-    });
-  } catch (emailErr) {
+  // 5. Send confirmation email asynchronously (non-blocking)
+  sendOrderConfirmationEmail(customerEmail, {
+    orderId:     order.orderId,
+    items:       orderItems,
+    totalAmount: order.totalAmount,
+    address:     order.address
+  }).catch(emailErr => {
     console.error('⚠️  Order placed but email failed:', emailErr.message);
-  }
+  });
 
   return order;
 };

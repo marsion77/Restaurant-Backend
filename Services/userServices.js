@@ -82,14 +82,12 @@ const loginUserService = async (email) => {
   );
 
   // 2. ACTUALLY SEND THE MAIL
-  try {
-    // Ensure sendMail is imported correctly and is an async function
-    await sendOTPEmail(email, otp);
+  // Send email asynchronously to avoid blocking the API response
+  sendOTPEmail(email, otp).then(() => {
     console.log(`✅ OTP ${otp} successfully sent to ${email}`);
-  } catch (mailError) {
+  }).catch((mailError) => {
     console.error("❌ Mailer Error:", mailError);
-    throw new Error("OTP stored but email failed to send. Check mailer config.");
-  }
+  });
 
   return { success: true, message: "OTP sent to your email" };
 };
